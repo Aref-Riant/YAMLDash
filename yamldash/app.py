@@ -40,15 +40,15 @@ def run_debug():
 def run():
 
     print(ascii_title)
-    webbrowser.open("127.0.0.1:8080", new=2)
+    webbrowser.open("0.0.0.0:8080", new=2)
 
     try:
         import waitress
 
-        print("Listening on 127.0.0.1:8080.")
+        print("Listening on 0.0.0.0:8080.")
         print("Press CTRL-C to stop.")
 
-        waitress.serve(wsgi_app, listen="127.0.0.1:8080", threads=cpu_count())
+        waitress.serve(wsgi_app, listen="0.0.0.0:8080", threads=cpu_count())
 
     except ModuleNotFoundError:
         print("Waitress server not found (use 'pip install waitress' to install it)")
